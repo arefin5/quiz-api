@@ -4,17 +4,10 @@ const Question=require('../model/Question')
 
 
 exports.createQuestion = async (req, res) => {
-    const { questionName, first,second,third,fourth,answer } = req.body;
-    console.log(req.body);
+    const { questionName, first,second,third,fourth,answer ,} = req.body;
+    // console.log(req.body);
     try{
-        const question = await Question.create({
-            questionName,
-          first,
-          second,
-          third,
-          fourth,
-          answer
-        });
+        const question = await Question.create(req.body);
         question.save();
         res.json({ok:true});
     }catch(err){
@@ -22,8 +15,9 @@ exports.createQuestion = async (req, res) => {
     }
 }
 exports.getAllQuestions = async (req, res) => {
-    const questions = await Question.find();
+    const questions = await Question.find() .sort({ createdAt: -1 })
     res.json(questions)
+    console.log(questions)
 }
 
 exports.updateQuestion = async (req, res) => {
