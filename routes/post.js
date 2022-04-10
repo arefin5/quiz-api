@@ -1,11 +1,9 @@
-import express from "express";
-import formidable from "express-formidable";
-
-import {
+const  express =require("express")
+const  {
     createQuestion,
     getAllQuestions
 }
-from '../controllers/post';
+=require ('../controllers/post');
 const router = express.Router();
 
 router.post("/create-question", createQuestion);

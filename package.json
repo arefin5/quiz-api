@@ -1,10 +1,11 @@
 {
-  "name": "server",
+  "name": "backend",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "start": "nodemon -r esm server.js"
+    "start": "nodemon server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
@@ -14,7 +15,6 @@
     "cloudinary": "^1.26.3",
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",
-    "esm": "^3.2.25",
     "express": "^4.17.1",
     "express-formidable": "^1.2.0",
     "express-jwt": "^6.0.0",

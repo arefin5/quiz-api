@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+const mongoose =require("mongoose") 
 const { ObjectId } = mongoose.Schema;
 const PostSchema = new mongoose.Schema({
     title: {
@@ -21,4 +21,6 @@ const PostSchema = new mongoose.Schema({
       }
 },{ timestamps: true })
 
-export default mongoose.model("Post",PostSchema );
+const Post =mongoose.model("Post",PostSchema );
+
+module.exports=Post;

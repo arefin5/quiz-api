@@ -1,4 +1,5 @@
-import mongoose from "mongoose";
+const mongoose =require("mongoose") 
+
 const { ObjectId } = mongoose.Schema;
 const PostQuestionSchema = new mongoose.Schema({
     questionName: {
@@ -29,4 +30,5 @@ const PostQuestionSchema = new mongoose.Schema({
 },{ timestamps: true })
 
 
-export default mongoose.model("Question",PostQuestionSchema );
+const Question=mongoose.model("Question",PostQuestionSchema );
+module.exports=Question;

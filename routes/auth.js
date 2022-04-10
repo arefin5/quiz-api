@@ -1,15 +1,15 @@
-import express from "express";
+const  express =require("express")
 
 const router = express.Router();
 
 // middleware
 // import {  isAdmin } from "../middlewares";
 // controllers
-import {
+const  {
   register,
   login,
   currentUser,
-} from "../controllers/auth";
+} =require ("../controllers/auth");
 
 
 router.post("/register", register);

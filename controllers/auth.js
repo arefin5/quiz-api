@@ -1,10 +1,12 @@
-import User from "../model/user";
-import { hashPassword, comparePassword } from "../helpers/auth";
-import jwt from "jsonwebtoken";
-import { nanoid } from "nanoid";
+const User=require('../model/user');
+const jwt=require('jsonwebtoken');
 
 
-export const register = async (req, res) => {
+const{ hashPassword, comparePassword } = require("../helpers/auth");
+const { nanoid } = require("nanoid");
+
+
+exports.register = async (req, res) => {
   //  console.log("REGISTER ENDPOINT => ", req.body);
   const { fname, email, password, lname } = req.body;
   // validation
@@ -50,7 +52,7 @@ export const register = async (req, res) => {
   }
 };
 
-export const login = async (req, res) => {
+exports.login = async (req, res) => {
   console.log(req.body);
   try {
     const { email, password } = req.body;
@@ -84,7 +86,7 @@ export const login = async (req, res) => {
   }
 };
 
-export const currentUser = async (req, res) => {
+exports.currentUser = async (req, res) => {
   try {
     const user = await User.findById(req.user._id);
     // res.json(user);
