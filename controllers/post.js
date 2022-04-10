@@ -1,5 +1,5 @@
 
-const Post=require("../model/post")
+
 const Question=require('../model/Question')
 
 
