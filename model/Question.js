@@ -28,8 +28,9 @@ const PostQuestionSchema = new mongoose.Schema({
                 trim: true
            },
            answer:{
-                arrey:[],
-
+                type: String,
+                required: true,
+                trim: true
            },
            category:{
                 type: String,
