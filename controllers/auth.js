@@ -96,9 +96,18 @@ exports.currentUser = async (req, res) => {
     res.sendStatus(400);
   }
 };
+exports.Exam = async (req, res) => {
+  try {
+    const _id= req.params._id;
+    console.log(_id);
+    const user=await User.findById(_id);
+  }catch (err) {
+    console.log(err);
+    res.sendStatus(400);
+  }
+}
 
-
-
+// $set: { isAdmin: true }
 
 
 

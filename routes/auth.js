@@ -9,12 +9,15 @@ const  {
   register,
   login,
   currentUser,
+  Exam
 } =require ("../controllers/auth");
 
+// const {requireSignin} =require ("../middlewares");
 
 router.post("/register", register);
 router.post("/login", login);
-// router.get("/current-user",  currentUser);
+router.get("/exam/:_id",Exam)
+// router.get("/current-user",  requireSignin,currentUser);
 
 // router.get("/current-admin", isAdmin, currentUser);
 

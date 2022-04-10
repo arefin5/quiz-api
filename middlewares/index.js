@@ -1,27 +1,26 @@
 // import Post from "../models/post";
 const User =require( "../model/user");
+const post  = require("../model/post");
+const Question =require( "../model/question");
+const expressJwt=require("express-jwt");
 // import expressJwt from "express-jwt";
 
-// export const requireSignin = expressJwt({
-//   secret:'shhhhhhared-secretshhhhhhared-secret',
-//   algorithms: ["HS256"],
-// });
+exports.requireSignin = expressJwt({
+  secret:'shhhhhhared-secretshhhhhhared-secret',
+  algorithms: ["HS256"],
+});
 
-// export const canEditDeletePost = async (req, res, next) => {
+// exports.canEditDeletePost = async (req, res, next) => {
 //   try {
-//     const post = await Post.findById(req.params._id);
+//     const question = await Question.findById(req.params._id);
 //     // console.log("POST in EDITDELETE MIDDLEWARE => ", post);
-//     if (req.user._id != post.postedBy) {
-//       return res.status(400).send("Unauthorized");
-//     } else {
 //       next();
-//     }
 //   } catch (err) {
 //     console.log(err);
 //   }
 // };
 
-export const isAdmin = async (req, res, next) => {
+exports.isAdmin = async (req, res, next) => {
   try {
     const user = await User.findById(req.user._id);
     // console.log("isAdmin ===> ", user);

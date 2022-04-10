@@ -7,26 +7,33 @@ const PostQuestionSchema = new mongoose.Schema({
         required: true,
         trim: true
     },
-        first:{
+    first:{
             type: String,
                required: true,
                trim: true
         },
-           second:{
+    second:{
                type: String,
                required: true,
                trim: true
            },
-           third:{
+    third:{
                type: String,
                required: true,
                trim: true
            },
-           fourth:{
+    fourth:{
                type: String,
                 required: true,
                 trim: true
-           }
+           },
+           answer:{
+                arrey:[],
+
+           },
+           category:{
+                type: String,
+           },
 },{ timestamps: true })
 
 

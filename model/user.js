@@ -28,7 +28,13 @@ const userSchema = new Schema(
     role: {
       type: String,
       default: "Subscriber",
-    },
+    },score: {
+      type: Number,
+      default:0,
+  },
+  blocked: {
+    type: Boolean, default: false
+}
   },
   { timestamps: true }
 );
