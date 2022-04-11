@@ -30,6 +30,8 @@ app.get('/', (req, res) => {
 });
 app.use('/api/', require('./routes/auth'));
 app.use('/api/', require('./routes/post'));
+app.use('/api/', require('./routes/student'));
+
 // readdirSync("./routes").map((r) => app.use("/api", require(`./routes/${r}`)));
 const port = process.env.PORT || 8000;
 

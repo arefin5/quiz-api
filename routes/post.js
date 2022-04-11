@@ -8,9 +8,6 @@ const  {
 }
 =require ('../controllers/post');
 const router = express.Router();
-
-
-
 router.post("/create-question", createQuestion);
 router.get("/get-all-posts",getAllQuestions );
 router.get('/total-posts', totalPosts);
