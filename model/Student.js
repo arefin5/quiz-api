@@ -25,6 +25,11 @@ const PostSchema = new mongoose.Schema({
     type: ObjectId,
     ref: "User",
   },
+  image: {
+    url: String,
+    public_id: String,
+  },
+  
 },{ timestamps: true })
 
 const Student =mongoose.model("Post",PostSchema );
