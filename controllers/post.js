@@ -17,7 +17,7 @@ exports.createQuestion = async (req, res) => {
 exports.getAllQuestions = async (req, res) => {
     const questions = await Question.find() .sort({ createdAt: -1 }).limit(20)
     res.json(questions)
-    console.log(questions)
+    // console.log(questions)
 }
 
 exports.updateQuestion = async (req, res) => {

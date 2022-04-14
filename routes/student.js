@@ -14,7 +14,7 @@ router.post("/create-student/", studentRegister);
 router.post("/upload-image",uploadStudentImage)
 
 
-// router.get("/current-student", uploadStudentImage );
+router.get("/current-student", uploadStudentImage );
 
 // router.get("/current-admin", isAdmin, currentUser);
 

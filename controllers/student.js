@@ -14,7 +14,7 @@ exports.studentRegister=async(req,res)=>{
     try{
           const student=new Student({name,roll,classname,studentId:_id})
           student.save()
-          console.log("student",student)
+          // console.log("student",student)
           res.json(student)
     }
     catch(err){
@@ -32,7 +32,7 @@ exports.getStudent=async(req,res)=>{
 }
 
 exports.uploadStudentImage = async (req, res) => {
-    // console.log("req files => ", req.files);
+    // console.log("req files => ", req.body);
     try {
       const result = await cloudinary.uploader.upload(req.files.image.path);
       console.log("uploaded image url => ", result);
