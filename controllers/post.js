@@ -43,7 +43,7 @@ exports.updateQuestion = async (req, res) => {
 
 
     exports.deleteQuestion = async (req, res) => {
-        console.log("post delete controller => ", req.params._id);
+        // console.log("post delete controller => ", req.params._id);
     
         const _id = req.params._id;
         try {
