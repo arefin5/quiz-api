@@ -3,6 +3,7 @@
 const Question=require('../model/Question')
 
 
+
 exports.createQuestion = async (req, res) => {
     const { questionName, first,second,third,fourth,answer ,} = req.body;
     // console.log(req.body);
