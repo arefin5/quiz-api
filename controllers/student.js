@@ -7,7 +7,6 @@ cloudinary.config({
   api_secret: process.env.CLOUDINARY_SECRET,
 });
 
-
 exports.studentRegister=async(req,res)=>{
     console.log("student","student")
     const {name,roll,classname,catagory,_id}=req.body;
@@ -33,14 +32,6 @@ exports.getStudent=async(req,res)=>{
 
 exports.uploadStudentImage = async (req, res) => {
     // console.log("req files => ", req.body);
-    try {
-      const result = await cloudinary.uploader.upload(req.files.image.path);
-      console.log("uploaded image url => ", result);
-      res.json({
-        url: result.secure_url,
-        public_id: result.public_id,
-      });
-    } catch (err) {
-      console.log(err);
-    }
+    // const {blob}=req.body;
+    console.log("req files => ",req.body)
   };

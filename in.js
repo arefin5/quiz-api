@@ -61,7 +61,7 @@ var storage = new GridFsStorage({
   url: 'mongodb+srv://arefin:arefin@cluster0.xl4t5.mongodb.net/flip-cart?retryWrites=true&w=majority',
   file: (req, file) => {
     return new Promise((resolve, reject) => {
-        const filename = `video-${Date.now()}${path.extname(file.originalname)}`;
+        const filename = `image-${Date.now()}${path.extname(file.originalname)}`;
                 const fileInfo = {
           filename: filename,
           bucketName: 'uploads'
@@ -71,45 +71,20 @@ var storage = new GridFsStorage({
   }
 });
 
-
 const upload = multer({ storage });
 app.post("/api/upload", upload.single("file"), (req, res) => {
-  res.set('Access-Control-Allow-Origin', '*');
-  res.set('Access-Control-Allow-Headers', '*');
-      console.log("req.file", req.file);
+
   res.json({ file: req.file });
-  // console.log( res.json({ file: req.file }));
 });
 
 
-
-// // 
-// var storage = new GridFsStorage({
-//   url: 'mongodb+srv://arefin:arefin@cluster0.xl4t5.mongodb.net/flip-cart?retryWrites=true&w=majority',
-//   fromData: (req, file) => {
-//     return new Promise((resolve, reject) => {
-//         const filename = `video-${Date.now()}${path.extname(file.originalname)}`;
-//                 const fileInfo = {
-//           filename: filename,
-//           bucketName: 'uploads'
-//         };
-//         resolve(fileInfo);
-//       });
-//   }
-// });
-
-
-// app.post("/api/upload", (req, res) => {
-//   console.log("req.file", req.body);
-//   const {File}=req.body;
-//   console.log(File)
-// // res.json({ file: req.file });
-// // console.log( res.json({ file: req.file }));
-// });
-
-
-
   // 
+
+
+
+
+
+
 // middlewares
 app.use(express.json({ limit: "50mb" }));
 app.use(express.urlencoded({ extended: true }));
