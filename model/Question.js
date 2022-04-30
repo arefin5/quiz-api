@@ -41,7 +41,11 @@ const PostQuestionSchema = new mongoose.Schema({
                           
                             type: String
                        },
-           ]
+           ],
+        postedBy: {
+            type: ObjectId,
+            ref: "Teacher",
+        }
         
 },{ timestamps: true })
 

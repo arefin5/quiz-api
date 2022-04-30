@@ -9,7 +9,10 @@ const  {
   register,
   login,
   currentUser,
-  Exam
+  teacherRegister,
+  teacherLogin,
+  Exam,
+  SubmiteResult
 } =require ("../controllers/auth");
 
 // const {requireSignin} =require ("../middlewares");
@@ -17,6 +20,9 @@ const  {
 router.post("/register", register);
 router.post("/login", login);
 router.get("/exam/:_id",Exam)
+router.post("/teacher-register", teacherRegister);
+router.post("/teacher-login", teacherLogin);
+router.put("/submite-result",SubmiteResult)
 // router.get("/current-user",  requireSignin,currentUser);
 
 // router.get("/current-admin", isAdmin, currentUser);

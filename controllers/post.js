@@ -5,12 +5,25 @@ const Question=require('../model/Question')
 
 
 exports.createQuestion = async (req, res) => {
-    const { questionName, first,second,third,fourth,answer ,} = req.body;
+    // const { questionName, first,second,third,fourth,answer ,} = req.body;
+    // // console.log(req.body);
+    // try{
+    //     const question = await Question.create(req.body, {postedBy: req.user._id});
+    //     question.save();
+    //     res.json({ok:true});
+    // }catch(err){
+    //     console.log(err);
+    // }
+    const { questionName, first,second,third,answer } = req.body;
     // console.log(req.body);
     try{
-        const question = await Question.create(req.body);
+        const question = await Question.create
+        ({answer:answer,questionName:questionName,incorrect_answer:[first,second,third],postedBy:req.user._id});
         question.save();
-        res.json({ok:true});
+        res.json(question);
+        return res.json({
+          ok: true,
+        });
     }catch(err){
         console.log(err);
     }

@@ -17,7 +17,7 @@ Grid.mongo = mongoose.mongo;
 
 // db
 mongoose
-  .connect(process.env.DATABASE || `mongodb+srv://arefin:arefin@cluster0.xl4t5.mongodb.net/flip-cart?retryWrites=true&w=majority`, {
+  .connect( `mongodb+srv://arefin:arefin@cluster0.xl4t5.mongodb.net/flip-cart?retryWrites=true&w=majority`, {
     useNewUrlParser: true,
     useFindAndModify: false,
     useUnifiedTopology: true,
@@ -71,19 +71,15 @@ var storage = new GridFsStorage({
   }
 });
 
-
 const upload = multer({ storage });
 app.post("/api/upload", upload.single("file"), (req, res) => {
-  res.set('Access-Control-Allow-Origin', '*');
-  res.set('Access-Control-Allow-Headers', '*');
-      console.log("req.file", req.file);
-  res.json({ file: req.file });
+      res.setHeader('Access-Control-Allow-Origin', '*');
+      console.log("req.file", req);
+       res.json({ file: req.file });
   // console.log( res.json({ file: req.file }));
 });
 
-
-
-// // 
+// 
 // var storage = new GridFsStorage({
 //   url: 'mongodb+srv://arefin:arefin@cluster0.xl4t5.mongodb.net/flip-cart?retryWrites=true&w=majority',
 //   fromData: (req, file) => {
@@ -100,11 +96,16 @@ app.post("/api/upload", upload.single("file"), (req, res) => {
 
 
 // app.post("/api/upload", (req, res) => {
-//   console.log("req.file", req.body);
-//   const {File}=req.body;
-//   console.log(File)
-// // res.json({ file: req.file });
-// // console.log( res.json({ file: req.file }));
+
+//   res.setHeader('Access-Control-Allow-Origin', '*');
+
+//   res.send('cors problem fixed:)');
+
+
+//   console.log("req.file", req);
+  
+// res.json({ file: req });
+// console.log( res.json({ file: req }));
 // });
 
 
