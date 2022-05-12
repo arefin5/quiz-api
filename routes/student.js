@@ -5,7 +5,8 @@ const router = express.Router();
 const  {
     studentRegister,
     getStudent,
-    uploadStudentImage
+    uploadStudentImage,
+    examResult
 } =require ("../controllers/student");
 
 //     formidable({ maxFileSize: 5 * 1024 * 1024 }),
@@ -16,7 +17,8 @@ router.post(
     uploadStudentImage
   );
 
-// router.get("/current-student", uploadStudentImage );
+router.get("/get-all-student", getStudent );
+router.put("/exam-result", examResult);
 
 // router.get("/current-admin", isAdmin, currentUser);
 

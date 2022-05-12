@@ -14,8 +14,7 @@ const PostSchema = new mongoose.Schema({
        Type:String,
    },
    mark:{
-       type:Number,
-       defult:0
+      default:0,
    },
     catagory:{
          type:String,
@@ -32,6 +31,6 @@ const PostSchema = new mongoose.Schema({
   
 },{ timestamps: true })
 
-const Student =mongoose.model("Post",PostSchema );
+const Student =mongoose.model("STUDENT",PostSchema );
 
 module.exports=Student;
