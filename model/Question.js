@@ -29,9 +29,8 @@ const PostQuestionSchema = new mongoose.Schema({
            },
            answer:{
                 type: String,
-                required: true,
+                // required: true,
                 trim: true
-
            },
            category:{
                 type: String,

@@ -20,6 +20,7 @@ router.post(
 router.get("/get-all-student", getStudent );
 router.put("/exam-result", examResult);
 
+
 // router.get("/current-admin", isAdmin, currentUser);
 
 module.exports = router;
