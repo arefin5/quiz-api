@@ -1,38 +1,35 @@
 const Question = require("../model/Question");
 
 exports.createQuestion = async (req, res) => {
-  // const { questionName, first,second,third,fourth,answer ,} = req.body;
-  // // console.log(req.body);
-  // try{
-  //     const question = await Question.create(req.body, {postedBy: req.user._id});
-  //     question.save();
-  //     res.json({ok:true});
-  // }catch(err){
-  //     console.log(err);
-  // }
+
   const { questionName, first, second, third, answer } = req.body;
-  // console.log(req.body);
+console.log(req.body)
   try {
-    const question = await Question.create({
+    const question = await Question({
       answer: answer,
       questionName: questionName,
       incorrect_answer: [first, second, third],
-      postedBy: req.user._id,
     });
     question.save();
     res.json(question);
+    console.log(question);
     return res.json({
       ok: true,
     });
   } catch (err) {
-    console.log(err);
+    // console.log(err);
   }
 };
+
+
 exports.getAllQuestions = async (req, res) => {
   const questions = await Question.find().sort({ createdAt: -1 }).limit(20);
   res.json(questions);
   // console.log(questions)
 };
+
+
+
 
 exports.updateQuestion = async (req, res) => {
   // console.log("post update controller => ", req.params._id );

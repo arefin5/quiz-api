@@ -4,11 +4,14 @@ const Teacher=require('../model/teacher');
 
 const{ hashPassword, comparePassword } = require("../helpers/auth");
 const { nanoid } = require("nanoid");
-
-
 exports.register = async (req, res) => {
   //  console.log("REGISTER ENDPOINT => ", req.body);
-  const { fname, email, password, lname } = req.body;
+  const { fname, email, password, lname ,rool,
+    registrationCode,
+    phone,
+    year,
+    blood,
+    gender} = req.body;
   // validation
   if (!fname) {
     return res.json({
@@ -25,6 +28,34 @@ exports.register = async (req, res) => {
       error: "Last Name is required",
     });
   }
+  if(!rool){
+    return res.json({
+      error: "Role is required",
+    });
+  }
+
+  if(!registrationCode){
+    return res.json({
+      error: "Registration Code is required",
+    });
+  }
+  if(!phone){
+    return res.json({
+      error: "Phone is required",
+    });
+  }
+  if(!year){
+    return res.json({
+      error: "Year is required",
+    });
+  }
+  if(!blood){
+    return res.json({
+      error: "Blood is required",
+    });
+  }
+
+
   const exist = await User.findOne({ email });
   if (exist) {
     return res.json({
@@ -39,6 +70,12 @@ exports.register = async (req, res) => {
     email,
     password: hashedPassword,
    lname,
+   rool,
+    registrationCode,
+    phone,
+    year,
+    blood,
+    gender
   });
   try {
     await user.save();
@@ -53,7 +90,6 @@ exports.register = async (req, res) => {
 };
 
 exports.login = async (req, res) => {
-  // console.log(req.body);
   try {
     const { email, password } = req.body;
     // check if our db has user with that email

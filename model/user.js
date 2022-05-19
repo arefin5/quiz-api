@@ -32,6 +32,25 @@ const userSchema = new Schema(
       type: Number,
       default:0,
   },
+  rool:{
+    type:String,
+  },
+      registrationCode:{
+        type:String,
+      },
+      phone:{
+        type:String,
+      },
+      year:{
+        type:String,
+      },
+      blood:{
+        type:String,
+      },
+      gender:{
+        type:String
+      },
+
   blocked: {
     type: Boolean, default: false
 }
