@@ -12,12 +12,12 @@ require("dotenv").config();
 
 const app = express();
 // grid:  mongose
-const mongoURI =`mongodb+srv://arefin:arefin@cluster0.xl4t5.mongodb.net/flip-cart?retryWrites=true&w=majority`;
+const mongoURI =`mongodb+srv://tanzim:eqTU5b12AkE4TsER@cluster0.hpmu4.mongodb.net/quiz-app?retryWrites=true&w=majority`;
 Grid.mongo = mongoose.mongo;
 
 // db
 mongoose
-  .connect( `mongodb+srv://arefin:arefin@cluster0.xl4t5.mongodb.net/flip-cart?retryWrites=true&w=majority`, {
+  .connect( `mongodb+srv://tanzim:eqTU5b12AkE4TsER@cluster0.hpmu4.mongodb.net/quiz-app?retryWrites=true&w=majority`, {
     useNewUrlParser: true,
     useFindAndModify: false,
     useUnifiedTopology: true,
@@ -58,7 +58,7 @@ conn.once("open", () => {
 //   },
 // });
 var storage = new GridFsStorage({
-  url: 'mongodb+srv://arefin:arefin@cluster0.xl4t5.mongodb.net/flip-cart?retryWrites=true&w=majority',
+  url: 'mongodb+srv://tanzim:eqTU5b12AkE4TsER@cluster0.hpmu4.mongodb.net/quiz-app?retryWrites=true&w=majority',
   file: (req, file) => {
     return new Promise((resolve, reject) => {
         const filename = `video-${Date.now()}${path.extname(file.originalname)}`;
