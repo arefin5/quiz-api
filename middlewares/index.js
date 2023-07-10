@@ -1,5 +1,4 @@
 const User  = require("../model/user");
-const post  = require("../model/post");
 const expressJwt=require("express-jwt");
 
 exports.requireSignin = expressJwt({
