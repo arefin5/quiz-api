@@ -28,12 +28,7 @@ exports.getAllQuestions = async (req, res) => {
 };
 
 
-
-
 exports.updateQuestion = async (req, res) => {
-  // console.log("post update controller => ", req.params._id );
-  // console.log("post delete controller => ", req.params._id);
-  // console.log(req.body);
   const { questionName, first, second, third, fourth ,answer} = req.body;
   const { _id } = req.params;
   // console.log(_id)
@@ -57,7 +52,6 @@ exports.updateQuestion = async (req, res) => {
 };
 
 exports.deleteQuestion = async (req, res) => {
-  // console.log("post delete controller => ", req.params._id);
 
   const _id = req.params._id;
   try {
