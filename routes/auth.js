@@ -1,7 +1,7 @@
 const  express =require("express")
 
 const router = express.Router();
-
+const {isAdmin}=require("../middlewares/index")
 // middleware
 // import {  isAdmin } from "../middlewares";
 // controllers
@@ -15,7 +15,6 @@ const  {
   SubmiteResult
 } =require ("../controllers/auth");
 
-// const {requireSignin} =require ("../middlewares");
 
 router.post("/register", register);
 router.post("/login", login);
@@ -25,7 +24,7 @@ router.post("/teacher-login", teacherLogin);
 router.put("/submite-result",SubmiteResult)
 // router.get("/current-user",  requireSignin,currentUser);
 
-// router.get("/current-admin", isAdmin, currentUser);
+router.get("/current-admin", isAdmin, currentUser);
 
 
 module.exports = router;

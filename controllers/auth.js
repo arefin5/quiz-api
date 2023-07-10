@@ -144,9 +144,7 @@ exports.Exam = async (req, res) => {
 
 // $set: { isAdmin: true }
 exports.teacherRegister = async (req, res) => {
-   console.log("REGISTER ENDPOINT => ", req.body);
   const { fname, email, password, lname } = req.body;
-
   try {
       // validation
   if (!fname) {

@@ -1,7 +1,6 @@
 // import Post from "../models/post";
 const User =require( "../model/user");
 const post  = require("../model/post");
-const Question =require( "../model/question");
 const expressJwt=require("express-jwt");
 // import expressJwt from "express-jwt";
 

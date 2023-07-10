@@ -1,6 +1,7 @@
 const  express =require("express")
 const formidable =require("express-formidable")
 const router = express.Router();
+const {isAdmin}=require("../middlewares/index")
 
 const  {
     studentRegister,
